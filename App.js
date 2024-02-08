@@ -5,22 +5,29 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
+  Pressable,
 } from "react-native";
 import React from "react";
-
+import logo from "./assets/images/logo.png";
 export default function App() {
   return (
     <>
       <StatusBar barStyle="light-content" />
       <SafeAreaView style={estilos.container}>
         <View style={estilos.viewLogo}>
+          <Image source={logo} style={estilos.logo} />
           <Text>Cinéfilos</Text>
         </View>
         <View style={estilos.viewBotoes}>
-          <Button title="Buscar Filmes" />
-          <Button title="Favoritos" />
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.TextoBotao}>Buscar Filmes</Text>
+          </Pressable>
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.TextoBotao}>Favoritos</Text>
+          </Pressable>
         </View>
-        <View style={estilos.rodape}>
+        <View style={estilos.viewRodape}>
           <Button title="Privacidade" />
           <Button title="Sobre" />
         </View>
@@ -31,29 +38,37 @@ export default function App() {
 
 const estilos = StyleSheet.create({
   container: {
-    backgroundColor: "#59515E",
+    backgroundColor: "#f4fcff",
     flex: 1,
-    justifyContent: "space-around",
-    paddingLeft: 50,
-    paddingRight: 50,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  logo: {
+    width: 250,
+    height: 250,
   },
   viewLogo: {
-    backgroundColor: "lightyellow",
     flex: 3,
+    justifyContent: "flex-end",
+    alignItems: "center",
   },
   viewBotoes: {
-    backgroundColor: "lightblue",
     flex: 2,
-    textAlign: "center",
     flexDirection: "row",
+    alignItems: "flex-start",
     justifyContent: "space-evenly",
-    alignItems: "center",
   },
-  rodape: {
-    backgroundColor: "orange",
-    alignItems: "center",
+  botao: {
+    borderStyle: "solid",
+    borderWidth: 2,
+    padding: 16,
+    backgroundColor: "#f4fcff",
+  },
+  viewRodape: {
+    flex: 0.2,
+    width: "80%",
     flexDirection: "row",
-    justifyContent: "space-evenly",
-    flex: 0.5,
+    justifyContent: "space-between",
+    alignItems: "center",
   },
 });
