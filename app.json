@@ -7,7 +7,7 @@
     "icon": "./assets/images/cinefilos.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/splash-cinefilos.png",
+      "image": "./assets/images/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#595959"
     },
