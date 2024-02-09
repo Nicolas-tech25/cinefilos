@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import React from "react";
 import logo from "./assets/images/logo.png";
+import Feather from "@expo/vector-icons";
 export default function App() {
   return (
     <>
@@ -21,15 +22,18 @@ export default function App() {
         </View>
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao}>
-            <Text style={estilos.TextoBotao}>Buscar Filmes</Text>
+            <Feather name="search" size={16} color="white" />
+            Buscar Filmes
           </Pressable>
-          <Pressable style={estilos.botao}>
-            <Text style={estilos.TextoBotao}>Favoritos</Text>
-          </Pressable>
+          <Pressable style={estilos.botao}></Pressable>
         </View>
         <View style={estilos.viewRodape}>
-          <Button title="Privacidade" />
-          <Button title="Sobre" />
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.textoBotao}>Privacidade</Text>
+          </Pressable>
+          <Pressable style={estilos.botao}>
+            <Text style={estilos.textoBotao}>Sobre</Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </>
@@ -53,22 +57,28 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
   viewBotoes: {
+    gap: 20,
     flex: 2,
     flexDirection: "row",
-    alignItems: "flex-start",
-    justifyContent: "space-evenly",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   botao: {
     borderStyle: "solid",
     borderWidth: 2,
     padding: 16,
-    backgroundColor: "#f4fcff",
+    backgroundColor: "#ff4117",
+    borderRadius: 5,
+    width: "40%",
+  },
+  textoBotao: {
+    color: "#fff",
   },
   viewRodape: {
-    flex: 0.2,
     width: "80%",
+    flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "center",
+    alignItems: "flex-start",
   },
 });
