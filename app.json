@@ -7,9 +7,9 @@
     "icon": "./assets/images/cinefilos.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/images/logo.png",
+      "image": "./assets/images/logo-splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#0000"
+      "backgroundColor": "#ff4117"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {

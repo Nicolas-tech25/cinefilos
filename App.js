@@ -46,21 +46,29 @@ export default function App() {
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="search" size={12} color="white" />
-              Buscar Filmes
+              <Ionicons name="search" size={12} color="white" /> Buscar Filmes
             </Text>
           </Pressable>
           <Pressable style={estilos.botao}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="star" size={12} color="gold" />
-              Favoritos
+              <Ionicons name="star" size={12} color="gold" /> Favoritos
             </Text>
           </Pressable>
         </View>
 
         <View style={estilos.viewRodape}>
-          <Button title="Privacidade" />
-          <Button title="Sobre" />
+          <Pressable style={estilos.botaoRodape}>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="lock-closed" size={12} color="white" />{" "}
+              Privacidade
+            </Text>
+          </Pressable>
+          <Pressable style={estilos.botaoRodape}>
+            <Text style={estilos.textoBotao}>
+              <Ionicons name="information-circle" size={12} color="white" />{" "}
+              Sobre
+            </Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </>
@@ -106,10 +114,15 @@ const estilos = StyleSheet.create({
     fontSize: 28,
   },
   viewRodape: {
-    width: "80%",
+    width: "100%",
     flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: "flex-start",
+    alignItems: "center",
+    backgroundColor: "#ff4117",
+  },
+  botaoRodape: {
+    padding: 16,
+    alignItems: "center",
   },
 });
