@@ -19,6 +19,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
+    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
   });
   /* Função atrelada ao hook useCallback
   Quando uma função está conectada ao useCallback, garantidos que a referência dela é armazenada na memória somente uma vez  */
@@ -98,6 +99,7 @@ const estilos = StyleSheet.create({
   },
   textoBotao: {
     color: "#fff",
+    fontFamily: "NotoSans",
   },
   titulo: {
     fontFamily: "Monoton-Regular",
