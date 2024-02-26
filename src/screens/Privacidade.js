@@ -63,17 +63,17 @@ export default function Privacidade() {
             enunciativo, mas não limitativo:
           </Text>
           <Text style={estilos.texto}>
-            A) Não se envolver em atividades que sejam ilegais ou contrárias à
+            A- Não se envolver em atividades que sejam ilegais ou contrárias à
             boa fé a à ordem pública;
           </Text>
           <Text style={estilos.texto}>
-            B) Não difundir propaganda ou conteúdo de natureza racista,
+            B- Não difundir propaganda ou conteúdo de natureza racista,
             xenofóbica, ou casas de apostas online, jogos de sorte e azar,
             qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou
             contra os direitos humanos;
           </Text>
           <Text style={estilos.texto}>
-            C) Não causar danos aos sistemas físicos (hardwares) e lógicos
+            C- Não causar danos aos sistemas físicos (hardwares) e lógicos
             (softwares) do Dá Hora Filmes, de seus fornecedores ou terceiros,
             para introduzir ou disseminar vírus informáticos ou quaisquer outros
             sistemas de hardware ou software que sejam capazes de causar danos

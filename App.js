@@ -8,9 +8,9 @@ export default function App() {
   return (
     <>
       <StatusBar barStyle="light-content" />
-      {/* <Home /> */}
+      <Home />
       {/* <Sobre /> */}
-      <Privacidade />
+      {/* <Privacidade /> */}
     </>
   );
 }

@@ -42,14 +42,15 @@ export default function Home() {
 }
 
 const estilos = StyleSheet.create({
-  logo: {
-    width: 125,
-    height: 125,
-  },
   viewLogo: {
     flex: 3,
-    justifyContent: "flex-start",
+    width: "80%",
+    justifyContent: "flex-end",
     alignItems: "center",
+  },
+  logo: {
+    width: 144,
+    height: 144,
   },
   viewBotoes: {
     gap: 20,

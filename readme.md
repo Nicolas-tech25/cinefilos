@@ -2,6 +2,12 @@
 
 Exemplo de app nativo multiplataforma criado com Reat native e expo
 
+## Brach 03
+
+- Criação das telas bási cas: Sobre e Privacidade
+- Componente `Scrollview` para conteúdos maiores que a tela com suporte á rolagem
+- Componente `Linking` para criação de link para web.
+
 ## Branch 02
 
 ### Utilização de fontes adicionais
