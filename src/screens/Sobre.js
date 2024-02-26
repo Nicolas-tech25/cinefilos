@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, Pressable } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Pressable,
+} from "react-native";
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import tmdb from "../../assets/images/logo-tmdb.png";
