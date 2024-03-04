@@ -12,7 +12,7 @@ import SafeContainer from "../components/SafeContainer";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-export default function BuscarFilmes() {
+export default function BuscarFilmes({ navigation }) {
   const [filme, setFilme] = useState("");
 
   const verificacao = (text) => {
@@ -20,13 +20,13 @@ export default function BuscarFilmes() {
   };
 
   const buscar = () => {
-    if (filme.trim() === "") {
+    if (filme === "") {
       Vibration.vibrate(500);
       Alert.alert("Atenção", "Por favor, digite o nome do filme.");
       return;
     }
-    // Aqui você colocaria o código para buscar o filme
-    console.log("Buscando filme:", filme);
+    /* Redirecionando para a tela de resultados passando o filme pra ela */
+    navigation.navigate("Resultados", { filme });
   };
   return (
     <SafeContainer>
