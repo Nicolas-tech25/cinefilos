@@ -5,6 +5,7 @@ import {
   Pressable,
   TextInput,
   Alert,
+  Vibration,
 } from "react-native";
 import React, { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
@@ -20,6 +21,7 @@ export default function BuscarFilmes() {
 
   const buscar = () => {
     if (filme.trim() === "") {
+      Vibration.vibrate(500);
       Alert.alert("Atenção", "Por favor, digite o nome do filme.");
       return;
     }
@@ -43,6 +45,7 @@ export default function BuscarFilmes() {
           />
           <TextInput
             style={estilos.input}
+            onSubmitEditing={buscar}
             onChangeText={verificacao}
             value={filme}
             placeholder="Digite o nome do filme"
@@ -51,7 +54,13 @@ export default function BuscarFilmes() {
         <View style={estilos.viewBotoes}>
           <Pressable style={estilos.botao} onPress={buscar}>
             <Text style={estilos.textoBotao}>
-              <Ionicons name="search" size={12} color="white" /> Buscar
+              <Ionicons
+                onPress={buscar}
+                name="search"
+                size={12}
+                color="white"
+              />{" "}
+              Buscar Filmes
             </Text>
           </Pressable>
         </View>
@@ -87,7 +96,7 @@ const estilos = StyleSheet.create({
     padding: 12,
     backgroundColor: "#ff4117",
     borderRadius: 5,
-    width: "40%",
+    width: "50%",
     color: "#ffff",
     alignItems: "center",
   },
