@@ -4,7 +4,7 @@ import { api, apikey } from "../services/api-moviedb";
 import { useEffect, useState, React } from "react";
 
 export default function Resultados({ route }) {
-  // const terror = 27;
+  // const terror = 9648;
   const [resultados, setResultados] = useState([]);
   // Capturando o parâmetro filme vindo de BuscarFilmes
   const { filme } = route.params;
