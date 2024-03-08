@@ -39,8 +39,8 @@ export default function BuscarFilmes({ navigation }) {
         </Text>
         <View style={estilos.areaBusca}>
           <MaterialCommunityIcons
-            name="movie-open-star"
-            size={24}
+            name="movie-filter"
+            size={26}
             color="#ff4117"
           />
           <TextInput
