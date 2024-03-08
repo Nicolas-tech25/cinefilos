@@ -1,14 +1,23 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { api, apikey } from "../services/api-moviedb";
 import { useEffect, useState, React } from "react";
 import CardFilme from "../components/CardFilme";
+import Separador from "../components/Separador";
+import Empty from "../components/Empty";
 
 export default function Resultados({ route }) {
   // const terror = 9648;
   const [resultados, setResultados] = useState([]);
   // Capturando o parâmetro filme vindo de BuscarFilmes
   const { filme } = route.params;
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function buscarFilmes() {
@@ -22,6 +31,7 @@ export default function Resultados({ route }) {
           },
         });
         setResultados(resposta.data.results);
+        setLoading(false);
       } catch (error) {
         console.error("Deu ruim: " + error.message);
       }
@@ -32,6 +42,8 @@ export default function Resultados({ route }) {
     <SafeContainer>
       <View style={estilos.subContainer}>
         <Text style={estilos.texto}>Você buscou por: {filme} </Text>
+        {loading && <ActivityIndicator size="large" color="#ff4117" />}
+        {!loading && <View style={estilos.viewFilmes}></View>}
         <View style={estilos.viewFilmes}>
           <FlatList
             //Prop data apontando para o state contendo os dados para flatList
@@ -42,6 +54,8 @@ export default function Resultados({ route }) {
             renderItem={({ item }) => {
               return <CardFilme filme={item} />;
             }}
+            ListEmptyComponent={Empty}
+            ItemSeparatorComponent={Separador}
           />
         </View>
       </View>
