@@ -8,21 +8,51 @@ import {
 import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
+import { Fontisto } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function Detalhes() {
+export default function Detalhes({ route }) {
+  const { filme } = route.params;
+  const { title, vote_average, release_date, overview, backdrop_path } = filme;
+
+  const formataData = (data) => {
+    const [ano, mes, dia] = data.split("-");
+    return `${dia}/${mes}/${ano}`;
+  };
+
   return (
     <SafeContainer>
       <View style={estilos.subContainer}>
-        <ImageBackground style={estilos.imagemFundo} source={imagemAlternativa}>
-          <Text style={estilos.titulo}>Titulo do filme...</Text>
+        <ImageBackground
+          style={estilos.imagemFundo}
+          source={
+            backdrop_path
+              ? {
+                  uri: `https://image.tmdb.org/t/p/original/${backdrop_path}`,
+                }
+              : imagemAlternativa
+          }
+        >
+          <Text style={estilos.titulo}>{title}</Text>
         </ImageBackground>
         <View style={estilos.conteudo}>
           <ScrollView>
-            <Text style={[estilos.texto, estilos.avaliacao]}>Avaliação...</Text>
-            <Text style={[estilos.texto, estilos.lancamento]}>
-              Lançamento...
+            <View style={estilos.areaDetalhes}>
+              <Text style={estilos.texto}>
+                <Fontisto name="like" size={24} color="#ff4117" />{" "}
+                {vote_average}
+              </Text>
+              <Text style={estilos.texto}>
+                <Ionicons name="calendar" size={23} color="#ff4117" />{" "}
+                {release_date ? formataData(release_date) : "Indisponível"}
+              </Text>
+            </View>
+            <Text style={estilos.texto}>
+              <Text style={estilos.sinopse}>Sinopse:</Text>{" "}
+              {overview || (
+                <Text style={{ fontStyle: "italic" }}>Filme sem descrição</Text>
+              )}
             </Text>
-            <Text style={[estilos.texto, estilos.descricao]}>Descrição...</Text>
           </ScrollView>
         </View>
       </View>
@@ -57,7 +87,10 @@ const estilos = StyleSheet.create({
     paddingVertical: 4,
     fontSize: 16,
   },
-  avaliacao: { color: "red" },
-  lancamento: { color: "blue" },
-  descricao: { color: "darkorange" },
+  areaDetalhes: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    marginVertical: 15,
+  },
+  sinopse: { color: "#ff4117" },
 });
