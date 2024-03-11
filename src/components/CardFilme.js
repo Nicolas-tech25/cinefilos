@@ -4,8 +4,14 @@ import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
 import { Entypo } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 
+/* Hook necessário poisnão estamos em uma tela com acesso as props */
+import { useNavigation } from "@react-navigation/native";
+
 export default function CardFilme({ filme }) {
   const { title, poster_path } = filme;
+
+  /* Acessar recursos de navegação */
+  const navigation = useNavigation();
   return (
     <View style={estilos.card}>
       <Image
@@ -20,7 +26,10 @@ export default function CardFilme({ filme }) {
       <View style={estilos.corpo}>
         <Text style={estilos.titulo}>{title}</Text>
         <View style={estilos.botoes}>
-          <Pressable style={estilos.botao}>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Detalhes")}
+          >
             <Text style={estilos.textoBotao}>
               {" "}
               <Entypo name="open-book" size={12} color="black" /> Leia mais

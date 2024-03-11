@@ -11,6 +11,8 @@ import { useEffect, useState, React } from "react";
 import CardFilme from "../components/CardFilme";
 import Separador from "../components/Separador";
 import Empty from "../components/Empty";
+import NaoLocalizado from "../components/NaoLocalizado";
+import Loading from "../components/Loading";
 
 export default function Resultados({ route }) {
   // const terror = 9648;
@@ -42,22 +44,21 @@ export default function Resultados({ route }) {
     <SafeContainer>
       <View style={estilos.subContainer}>
         <Text style={estilos.texto}>Você buscou por: {filme} </Text>
-        {loading && <ActivityIndicator size="large" color="#ff4117" />}
-        {!loading && <View style={estilos.viewFilmes}></View>}
-        <View style={estilos.viewFilmes}>
-          <FlatList
-            //Prop data apontando para o state contendo os dados para flatList
-            data={resultados}
-            //Extraindo cada registro/item/Filme único
-            keyExtractor={(item) => item.id}
-            // Prop que irá renderizar cada item/filme em um componente
-            renderItem={({ item }) => {
-              return <CardFilme filme={item} />;
-            }}
-            ListEmptyComponent={Empty}
-            ItemSeparatorComponent={Separador}
-          />
-        </View>
+
+        {loading && <Loading />}
+        {!loading && (
+          <View style={estilos.viewFilmes}>
+            <FlatList
+              data={resultados}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => {
+                return <CardFilme filme={item} />;
+              }}
+              ListEmptyComponent={NaoLocalizado}
+              ItemSeparatorComponent={Separador}
+            />
+          </View>
+        )}
       </View>
     </SafeContainer>
   );

@@ -3,6 +3,7 @@ import React from "react";
 import SafeContainer from "../components/SafeContainer";
 import logo from "../../assets/images/logo.png";
 import { Ionicons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Home({ navigation }) {
   return (
@@ -23,7 +24,7 @@ export default function Home({ navigation }) {
         </Pressable>
         <Pressable style={estilos.botao}>
           <Text style={estilos.textoBotao}>
-            <Ionicons name="star" size={12} color="gold" /> Favoritos
+            <MaterialIcons name="favorite" size={12} color="white" /> Favoritos
           </Text>
         </Pressable>
       </View>
