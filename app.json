@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Cinéfilos",
-    "slug": "Cinéfilos",
+    "slug": "cinefilos",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/cinefilos.png",
@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ff4117"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -19,7 +21,14 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-cinefilos.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.nicolastech.cinefilos"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "25de52ad-bf1b-4d48-89ed-61f2a991b4eb"
       }
-    }
+    },
+    "owner": "nicolastech"
   }
 }
